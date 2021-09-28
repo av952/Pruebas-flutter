@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -51,6 +53,10 @@ Widget cuerpo() {
         campousuario("usuario", false),
         campousuario("correo", false),
         campousuario("contraseña", true),
+        SizedBox(
+          height: 15,
+        ),
+        boton(),
       ],
     )),
   );
@@ -76,4 +82,14 @@ Widget campousuario(a, b) {
       ),
     ),
   );
+}
+
+Widget boton() {
+  return ElevatedButton(
+      style: ElevatedButton.styleFrom(primary: Colors.amber),
+      onPressed: () {},
+      child: Text(
+        "select",
+        style: TextStyle(fontSize: 25, color: Colors.white),
+      ));
 }
