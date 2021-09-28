@@ -32,37 +32,48 @@ class _inicioState extends State<inicio> {
         centerTitle: true,
         title: Text("my Aplicacion"),
       ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        mainAxisSize: MainAxisSize.max,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-          Container(
-            width: MediaQuery.of(context).size.width,
-            height: 100,
-            padding: EdgeInsets.all(5),
-            child: Image.network(
-                "https://image.flaticon.com/icons/png/512/1238/1238808.png"),
-          ),
-          Container(
-            height: 100,
-            padding: EdgeInsets.all(5),
-            child: Image.network(
-                "https://image.flaticon.com/icons/png/512/1238/1238808.png"),
-          ),
-          Container(
-              child: ElevatedButton(
-            child: Row(
-              children: [Icon(Icons.accessible_forward_sharp), Text("  Hora")],
-            ),
-            onPressed: () {
-              var t = DateTime.now();
-
-              print(t);
-            },
-          )),
-        ],
-      ),
+      body: cuerpo(),
     );
   }
+}
+
+Widget cuerpo() {
+  return Container(
+    decoration: BoxDecoration(
+        image: DecorationImage(
+            image: NetworkImage("https://acortar.link/ZTly72"),
+            fit: BoxFit.fill)),
+    child: Center(
+        child: Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: <Widget>[
+        nombre(),
+        campousuario("usuario", false),
+        campousuario("correo", false),
+        campousuario("contraseña", true),
+      ],
+    )),
+  );
+}
+
+Widget nombre() {
+  return Text(
+    "sing in",
+    style: TextStyle(
+        color: Colors.white70, fontSize: 50, fontWeight: FontWeight.bold),
+  );
+}
+
+Widget campousuario(a, b) {
+  return Container(
+    padding: EdgeInsets.symmetric(horizontal: 50, vertical: 5),
+    child: TextField(
+      obscureText: b,
+      decoration: InputDecoration(
+        hintText: a,
+        fillColor: Colors.white,
+        filled: true, //para que se coloree el fondo  del fillColor
+      ),
+    ),
+  );
 }
