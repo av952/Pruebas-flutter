@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_application_1/pages/pagina2.dart';
 
 void main() => runApp(miApp());
 
@@ -13,7 +14,7 @@ class miApp extends StatelessWidget {
     return MaterialApp(
       title: "my App",
       home: inicio(),
-    );
+    ); //android\app\src\main\res
   }
 }
 
@@ -34,12 +35,12 @@ class _inicioState extends State<inicio> {
         centerTitle: true,
         title: Text("my Aplicacion"),
       ),
-      body: cuerpo(),
+      body: cuerpo(context),
     );
   }
 }
 
-Widget cuerpo() {
+Widget cuerpo(c) {
   return Container(
     decoration: BoxDecoration(
         image: DecorationImage(
@@ -56,7 +57,7 @@ Widget cuerpo() {
         SizedBox(
           height: 15,
         ),
-        boton(),
+        boton(c),
       ],
     )),
   );
@@ -84,12 +85,12 @@ Widget campousuario(a, b) {
   );
 }
 
-Widget boton() {
+Widget boton(c) {
   return ElevatedButton(
-      style: ElevatedButton.styleFrom(primary: Colors.amber),
-      onPressed: () {},
-      child: Text(
-        "select",
-        style: TextStyle(fontSize: 25, color: Colors.white),
-      ));
+    onPressed: () {
+      Navigator.push(c, MaterialPageRoute(builder: (c) => pagina2()));
+    },
+    style: ElevatedButton.styleFrom(primary: Colors.amber),
+    child: Text("Select"),
+  );
 }
