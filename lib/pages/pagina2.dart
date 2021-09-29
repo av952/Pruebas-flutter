@@ -5,27 +5,42 @@ class pagina2 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
+    return Container(
+      decoration: BoxDecoration(
+          image: DecorationImage(
+              image: AssetImage(
+                "assets/imagenfondo.png",
+              ),
+              repeat: ImageRepeat.repeat)),
+      child: Scaffold(
         backgroundColor: Colors.transparent,
-        shadowColor: Colors.deepPurple[100],
-        centerTitle: true,
-        title: Text("Pagina 2"),
-      ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: <Widget>[
-          Container(
-            //margin: EdgeInsets.only(left: 50, right: 10),
-            alignment: Alignment.center,
-            child: Text("Terminos y condiciones",
-                style: TextStyle(
-                  fontSize: 25,
-                  fontWeight: FontWeight.bold,
-                )),
-          ),
-          letras(context),
-        ],
+        appBar: AppBar(
+          backgroundColor: Colors.transparent,
+          shadowColor: Colors.deepPurple[100],
+          centerTitle: true,
+          title: Text("Pagina 2"),
+        ),
+        body: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: <Widget>[
+            Container(
+              //margin: EdgeInsets.only(left: 50, right: 10),
+              alignment: Alignment.center,
+              child: Text("Terminos y condiciones",
+                  style: TextStyle(
+                    fontSize: 30,
+                    fontWeight: FontWeight.bold,
+                  )),
+            ),
+            Container(
+              decoration: BoxDecoration(
+                  image: DecorationImage(
+                      image: AssetImage("assets/imagenfondo.png"),
+                      fit: BoxFit.fill)),
+            ),
+            letras(context),
+          ],
+        ),
       ),
     );
   }
