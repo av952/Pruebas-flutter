@@ -44,8 +44,7 @@ Widget cuerpo(c) {
   return Container(
     decoration: BoxDecoration(
         image: DecorationImage(
-            image: NetworkImage("https://acortar.link/ZTly72"),
-            fit: BoxFit.fill)),
+            image: AssetImage("assets/imagenfondo.png"), fit: BoxFit.fill)),
     child: Center(
         child: Column(
       mainAxisAlignment: MainAxisAlignment.center,
